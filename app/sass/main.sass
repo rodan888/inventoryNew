@@ -1,31 +1,86 @@
 @import "bourbon"
 @import "_vars.sass"
+@import "_mixins.sass"
+@import "_form.sass"
+@import "_popup.sass"
+@import "_tabs.sass"
 
-*::-webkit-input-placeholder
-	color: #666
-	opacity: 1
+%extend_before
+	position: absolute
+	content: ""
+	width: 100%
+	bottom: 0
 
-*:-moz-placeholder
-	color: #666
-	opacity: 1
-
-*::-moz-placeholder
-	color: #666
-	opacity: 1
-
-*:-ms-input-placeholder
-	color: #666
-	opacity: 1
-
-body input:focus:required:invalid,
-body textarea:focus:required:invalid
-	color: #666
-body input:required:valid,
-body textarea:required:valid
-	color: #666
+%extend_inline
+	display: inline-block
+	position: relative
+	vertical-align: top
 
 //Custom Styles Here
 
 
+.slider
+	margin-top: 40px
+	.item
+		img
+			width: 100%
+	.owl-controls
+		.owl-buttons
+			width: 100%
+			position: absolute
+			height: 40px
+			top: 50%
+			margin-top: -20px
+			.owl-prev
+				position: absolute
+				left: 0
+				top: 0
+			.owl-next
+				position: absolute
+				right: 0
+				top: 0
+
+
+
+
+footer 
+	background-color: $main
+	min-height: 50px	
+	color: $white		
+	position: absolute
+	margin-top: 40px
+	bottom: 0
+	left: 0
+	width: 100%
+	.copy 
+		position: absolute
+		min-height: 50px
+		bottom: 0
+		left: 0
+		width: 100%
+		line-height: 50px
+		a
+			color: $white
+			&:hover
+				text-decoration: underline
+		.dev 
+			position: absolute
+			right: 0
+			bottom: -45px
+			width: 150px
+			height: 40px
+			padding-left: 24px
+			background-image: url(../img/copy.png)
+			background-repeat: no-repeat
+			background-position: center left
+			line-height: 14px!important
+			background-size: 20px
+			font-size: 10px
+			padding-top: 5px
+			span 
+				display: block
+
+
 //ALWAYS END
+@import "_preloader.sass"
 @import "media"

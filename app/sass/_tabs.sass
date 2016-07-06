@@ -1,0 +1,29 @@
+.tabs
+	ul
+		li
+			@extend %extend_inline
+			line-height: 40px
+			padding: 0 10px
+			border: 1px solid $main
+			text-transform: uppercase
+			font-size: 14px
+			cursor: pointer
+			&.active
+				background-color: $main
+				color: $white
+	.tabs-wrap
+		.tab
+			display: none
+			&:first-child
+				display: block
+				.tab-content
+					@include opacity(1)
+					margin-top: 0					
+			.tab-content
+				margin-top: 150px
+				@include opacity(0)
+				@include transition(all 0.8s)
+				&.active
+					margin-top: 0
+					@include opacity(1)
+				
