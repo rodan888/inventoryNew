@@ -38,16 +38,17 @@ $(function() {
 		popup: function(el){
 			el.on('click',function(event){
 				event.preventDefault();		
-				var show = $(this).data('show');				
+				var show = $(this).data('show'),
+						pop  = $('#'+ show);
 
-				$('#'+ show).fadeIn(600)
+				pop.fadeIn(600)
 				.css('height', $(window).height() + 'px')
 				.find('.popup-content')
 				.removeClass('anim')
 				.append('<span class="fade_out">&#9587;</span>')
 
 				$('.fade_out').click(function(){
-					$('#'+ show).fadeOut(600)
+					pop.fadeOut(600)
 					.find('.popup-content')
 					.addClass('anim');
 					$(this).detach();

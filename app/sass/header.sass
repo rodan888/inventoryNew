@@ -69,7 +69,9 @@ input,textarea,button
 	line-height: 24px
 	color: $textColor
 	margin-bottom: 25px
+	
 
+// Button start------------------------
 .btn
 	border: 2px solid $main
 	color: $main
@@ -137,7 +139,10 @@ input,textarea,button
 				width: 100%
 			&:before
 				right: -15px
+// Button end--------------------------------
 
+
+// Image card scale start--------------------
 .img-wrap
 	position: relative
 	height: 230px
@@ -154,6 +159,10 @@ input,textarea,button
 		@include transition(transform 0.8s)
 		&:hover
 			@include transform(translate(-50%,-50%) scale(1.2))
+// Image card scale утв-----------------------
+
+
+// Card text content start--------------------
 .card
 	overflow: hidden
 	box-shadow: 0 0px 4px $gray
@@ -198,8 +207,10 @@ input,textarea,button
 			display: block
 			margin: 0 auto
 			max-width: 170px
+// Card text content end--------------------
 
 
+// Burger button start----------------------
 .mob-button			
 	position: relative
 	width: 32px
@@ -240,9 +251,52 @@ input,textarea,button
 				-webkit-transition-delay: 0.3s
 				-o-transition-delay: 0.3s
 				transition-delay: 0.3s
+// Burger button end--------------
+
+
+// Pagination start-----------------
+.pagination 
+	&.light
+		ul.pagination			
+			font-size: 0
+			li
+				border-bottom: 1px solid $main
+				&.control
+					border: none
+					&:hover
+						a
+							box-shadow: none
+				&.active,&:hover
+					a	
+						border: none	
+						box-shadow: inset 0px -3px 0px $main				
+				a
+					border: none	
+					font-size: 16px
+	ul.pagination
+		margin-top: 20px
+		text-align: center		
+		li
+			display: inline-block			
+			a
+				line-height: 45px
+				width: 45px
+				background-color: $white
+				border: 1px solid $gray
+				display: block
+				text-align: center
+				color: $gray				
+				@include transition(all 0.3s)
+			&.active,&:hover
+				a
+					border: 1px solid $main
+					color: $main
+// Pagination end------------------------------
+
 
 .block
 	min-height: 300px
+	position: relative
 .content-block
 	position: absolute
 	max-width: 600px	
