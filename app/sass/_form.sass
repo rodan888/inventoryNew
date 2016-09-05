@@ -212,3 +212,138 @@ form
 			outline: none
 			+ label
 				@include transform(rotate(180deg))
+
+.addui-slider
+	display: block
+	box-sizing: border-box
+	position: relative
+	&.addui-slider-horizontal
+		height: 85px
+		padding-top: 30px		
+		margin: 16px 25px
+		.addui-slider-track
+			height: 4px			
+			width: 100%
+			top: 23px
+			left: 0
+			.addui-slider-range
+				width: auto
+				height: 4px
+			.addui-slider-handle
+				left: auto
+				top: -24px
+				@include transform(translateX(-50%))
+	*
+		box-sizing: border-box
+	&:not(.addui-slider-isrange)
+		cursor: pointer
+	.output
+		position: absolute
+		bottom: -5px
+		width: 100%
+		text-align: center
+		color: $black
+		font-size: 16px
+	.addui-slider-track
+		display: block
+		position: relative
+		background: rgba(0, 0, 0, 0.38)
+		@include border-radius(4px)
+		.addui-slider-range
+			display: block
+			background: $main
+			position: absolute
+			@include border-radius(4px)
+		.addui-slider-handle
+			display: block
+			width: 50px
+			height: 50px
+			background: rgba(44,188,153, 0)
+			box-shadow: 0 0 5px rgba(44,188,153, 0)
+			position: absolute
+			border-radius: 50px
+			cursor: pointer
+			z-index: 0
+			.addui-slider-value
+				display: block
+				background: rgba(44,188,153, 0)
+				width: 40px
+				height: 40px
+				border-radius: 50%
+				margin-top: 0px
+				color: white
+				opacity: 0
+				pointer-events: none
+				position: absolute
+				z-index: 1
+				left: 5px
+				@include transition(all 0.4s)
+				span 
+					display: block
+					width: 100%
+					height: 100%
+					font-size: 14px!important
+					text-align: center
+					color: $white
+					line-height: 40px
+					position: absolute
+					z-index: 1 				
+			&:hover
+				box-shadow: 0 0 5px rgba(44,188,153, 0.5)
+				.addui-slider-value
+					background: rgba(44,188,153, 0.5)
+					opacity: 1
+					margin-top: -42px					
+			&.addui-slider-handle-active 
+				background: rgba(44,188,153, 0.5)
+				box-shadow: 0 0 5px rgba(44,188,153, 0.5)
+				.addui-slider-value 
+					background: rgba(44,188,153, 0.75)
+					opacity: 1
+					margin-top: -42px				
+			&:after 
+				display: block
+				content: " "
+				width: 20px
+				height: 20px
+				background: $main
+				border-radius: 20px
+				position: relative
+				top: 15px
+				left: 15px
+			&:before
+				position: absolute
+				content: ''
+				background-color: $white
+				width: 8px
+				height: 8px
+				margin-top: -4px
+				margin-left: -4px
+				top: 50%
+				left: 50%
+				z-index: 10
+				@include border-radius(8px)
+
+
+.addui-slider.addui-slider-vertical
+	height: 120px
+	width: 50px
+	margin: 25px 16px
+	.output
+		bottom: 50%
+		left: 45%
+		@include transform(translateY(50%))
+	.addui-slider-track 
+		height: 100%
+		width: 4px
+		top: 0
+		left: 23px
+		.addui-slider-range 
+			width: 4px
+			height: auto
+		.addui-slider-handle
+			left: -24px
+			top: auto
+			@include transform(translateY(50%))
+			&.addui-slider-handle-l
+				z-index: 2
