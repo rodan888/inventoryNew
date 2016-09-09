@@ -13,7 +13,7 @@ $ gulp
 first instalation
 -----------
 
-$ npm install —g gulp
+$ npm install -g gulp
 
 $ npm install jade --global
 
