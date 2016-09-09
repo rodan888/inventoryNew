@@ -1,4 +1,4 @@
-var gulp         = require('gulp'),
+var     gulp         = require('gulp'),
 		sass         = require('gulp-sass'),
 		autoprefixer = require('gulp-autoprefixer'),
 		minifycss    = require('gulp-minify-css'),
@@ -7,6 +7,7 @@ var gulp         = require('gulp'),
 		concat       = require('gulp-concat'),
 		concatCss    = require('gulp-concat-css'),
 		uglify       = require('gulp-uglifyjs'),
+		jade         = require('gulp-jade'),
 		imagemin     = require('gulp-imagemin');
 
 gulp.task('browser-sync', [
@@ -14,15 +15,16 @@ gulp.task('browser-sync', [
 							'compress',
 							'scriptsConcat',
 							'scriptsCommon',
-							'vendorCss',
-							'htmldist',
+							'vendorCss',							
+							'templates',
 							'fontsdist',
 							], function() {
 		browserSync.init({
 				server: {
 						baseDir: "./dist"
 				},
-				notify: false
+				notify: false,
+				files: ['./dist/**/*.html','./dist/js/*.js','./dist/css/*.css']
 		});
 });
 
@@ -68,9 +70,14 @@ gulp.task('vendorCss', function () {
     .pipe(gulp.dest('dist/css'));
 }); 
 
-gulp.task('htmldist', function() {
-  	return gulp.src('app/*.html')   
-    .pipe(gulp.dest('./dist/'));
+gulp.task('templates', function() {
+  var YOUR_LOCALS = {};
+  gulp.src('app/**/*.jade')
+    .pipe(jade({
+      locals: YOUR_LOCALS,
+      pretty: true
+    }))
+    .pipe(gulp.dest('./dist/'))
 });
 
 gulp.task('fontsdist', function() {
@@ -78,11 +85,17 @@ gulp.task('fontsdist', function() {
     .pipe(gulp.dest('dist/fonts'));
 });
 
+// gulp.task('watch', function () {
+// 	gulp.watch('app/sass/*.sass', ['styles']).on('change', browserSync.reload);
+// 	gulp.watch('app/libs/**/*.js', ['scripts']);
+// 	gulp.watch('app/js/*.js',['scriptsCommon']).on("change", browserSync.reload);	
+// 	gulp.watch('app/**/*.jade', ['templates']).on('change', browserSync.reload);
+// });
 gulp.task('watch', function () {
-	gulp.watch('app/sass/*.sass', ['styles']).on('change', browserSync.reload);
+	gulp.watch('app/sass/*.sass', ['styles']);
 	gulp.watch('app/libs/**/*.js', ['scripts']);
-	gulp.watch('app/js/*.js',['scriptsCommon']).on("change", browserSync.reload);
-	gulp.watch('app/*.html', ['htmldist']).on('change', browserSync.reload);
+	gulp.watch('app/js/*.js',['scriptsCommon']);	
+	gulp.watch('app/**/*.jade', ['templates']);
 });
+gulp.task('default', ['watch','browser-sync']);
 
-gulp.task('default', ['browser-sync', 'watch']);

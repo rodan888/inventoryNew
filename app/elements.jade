@@ -1,0 +1,203 @@
+doctype html
+html.no-js(lang="ru")
+	include templates/structure/head
+	body
+		include templates/structure/header
+		main
+			div.container
+				div.row
+					div.col-md-12
+						section.tabs
+							ul 
+								each val,ind in ['form','image','slider','popup','over']
+									if(ind== 0)
+										li.tab-link.active(data-show=val)=val
+									else
+										li.tab-link(data-show=val)=val
+							div.tabs-wrap
+								div#form.tab
+									div.tab-content
+										h1.title.center.mt4 Forms example								
+										form(action="#")
+											div.container-fluid
+												div.row
+													div.col-md-6.clrp
+														div.form-group
+															input(type="checkbox", name="fancy-checkbox" id="fancy-checkbox")
+															label(for="fancy-checkbox") Checkbox
+														div.form-group
+															input(type="radio", name="fancy-radio", id="radio-1", checked)
+															label(for="radio-1") Radio
+															input(type="radio", name="fancy-radio", id="radio-2")
+															label(for="radio-2") Radio
+													div.col-md-6.clrp.right
+														div.form-group
+															select(name="lengvich1", id="lengvich1")
+																each val,ind in ['Select lengvich','JavaScript','CSS','HTML','PHP','C#','Java','C++','Ruby']
+																	option(value=ind)=val
+															label(for="lengvich1")
+																i.fa.fa-angle-down
+														div.form-group
+															select(name="lengvich", id="lengvich2")
+																each val,ind in ['Select lengvich','JavaScript','CSS','HTML','PHP','C#','Java','C++','Ruby']
+																	option(value=ind)=val
+															label(for="lengvich2")
+																i.fa.fa-angle-down
+													div.col-md-6
+														div.form-group
+															input(
+																data-addui='slider',
+																data-step='1',
+																data-id='range',
+																data-min='1',
+																data-max='100',
+																value='20')
+													div.col-md-6
+														div.form-group
+															input(
+																data-addui='slider',
+																data-min='-20',
+																data-step='0.1',
+																data-max='20', 
+																value='0')
+													div.col-md-6
+														div.form-group
+															input(
+																data-addui='slider',
+																data-min='-5',
+																data-max='5',
+																data-range='true',
+																value='-2,2')
+													div.col-md-6
+														div.container-fluid
+															div.row
+																div.col-md-6.clrp
+																	div.form-group
+																		input(
+																			data-addui='slider',
+																			data-direction='vertical')
+																div.col-md-6
+																	div.form-group
+																		input(
+																			data-addui='slider',
+																			data-direction='vertical',
+																			data-range='true',
+																			data-min='20',
+																			data-max='40',
+																			data-step='1',
+																			value='25,35')
+											div.form-group
+												input(type="text", name="fancy-text", id="fancy-text")
+												label(for="fancy-text") Name
+											div.form-group
+												input(type="text", name="fancy-email", id="fancy-email", required)
+												label(for="fancy-email") E-mail
+											div.form-group
+												textarea(name="fancy-textarea" id="fancy-textarea")
+												label(for="fancy-textarea") Description
+											button(type="submit" class="btn mb2") Submit
+											button(type="submit" class="btn grey mb2") Submit
+											button(type="submit" class="btn small mb2") Submit
+											button(type="submit" class="btn full mb2") Submit
+											input(type="hidden", name="project_name", value="Имя сайта")
+											input(type="hidden", name="admin_email", value="tsumbaluk888@gmail.com")
+											input(type="hidden", name="form_subject", value="Заявка с имя сайта")
+								div#image.tab
+									div.tab-content
+										h1.title.center.mt4 Image card example
+										div.container-fluid
+											- var n = 0
+											- var i = 0
+											while n < 4
+												div.col-md-3.clrp
+													div.card
+														div.img-wrap.small
+															img(src="img/seampl"+ n++ +".jpg" alt="foto")									
+											while i < 3
+												div.col-md-4.clrp
+													div.card.hover
+														div.img-wrap.small
+															img(src="img/seampl#{+n+i++}.jpg" alt="foto")
+														div.descr
+															h3 card hover||img-wrap small #{+n+i}
+															p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi atque tempore illo necessitatibus reprehenderit, soluta quasi quos!
+															a(href="#", class="btn grey") Reed
+								div#slider.tab
+									div.tab-content
+										h1.title.center.mt4 Slider example
+										section.slider
+											- var n = 0
+											while n < 3
+												div.item
+													img(src="img/slider"+ n++ +".jpg" alt="foto")
+								div#popup.tab
+									div.tab-content.center
+										h1.title.center.mt4 Popup example
+										button(type="button", class="btn pop mt4", data-show="popup-ex") Seample popup
+										button(type="button", class="btn pop ье4", data-show="popup-an") Animation popup</button>
+									div#popup-ex.popup
+										div.popup-content
+											h2 Popup content title
+											p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit eius, facilis non at harum labore facere repellendus ea, perferendis sit.
+									div#popup-an.popup
+										div.popup-content.anim
+											h2 Popup content title
+											p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit eius, facilis non at harum labore facere repellendus ea, perferendis sit.
+								div#over.tab
+									div.tab-content.center
+										h3.title.center.mt4 Over DOM element
+										div.container-fluid
+											div.col-md-3.block
+												h3.subtitle.mt2 Burger menu
+												div.mob-button.mt4
+													span
+													span
+													span
+											div.col-md-3.block
+												h3.subtitle.mt2.mb0 Gif preloader
+												div.preloader-wrap
+													div.preloader.gif
+											div.col-md-3
+												h3.subtitle.mt2.mb0 CSS preloader
+												div.preloader-wrap
+													div.preloader.css
+											div.col-md-3.block
+												h3.subtitle.mt2 Dropdown
+												div.dropdown
+													button(type="button" class="btn") dropdown button
+													ul
+														- var p = 0
+														while p < 4
+															li item-#{p++}
+											div.col-md-3.block
+												h3.subtitle.mt2 Pagination
+												div.pagination
+													ul.pagination
+														li.control
+															a(href="#")
+																i.fa.fa-angle-left
+														li.active
+															a(href="#") 1
+														li
+															a(href="#") 2
+														li.control
+															a(href="#")
+																i.fa.fa-angle-right
+											div.col-md-3.block
+												h3.subtitle.mt2 Pagination light
+												div.pagination.light
+													ul.pagination
+														li.control
+															a(href="#")
+																i.fa.fa-angle-left
+														li.active
+															a(href="#") 1
+														li
+															a(href="#") 2
+														li
+															a(href="#") 3
+														li.control
+															a(href="#")
+																i.fa.fa-angle-right
+		include templates/structure/footer			
+		include templates/structure/scripts

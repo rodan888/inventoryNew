@@ -76,7 +76,7 @@ $(function() {
 			this.dragstart(this.opt.img);
 			this.dragstart(this.opt.linc);
 
-			// tabs init 
+			// tabs init
 			this.tabs(this.opt.tabs);
 			// popup init
 			this.popup(this.opt.popup);
