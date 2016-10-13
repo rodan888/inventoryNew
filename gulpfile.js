@@ -57,8 +57,8 @@ gulp.task('scriptsConcat', function() {
 
 gulp.task('scriptsCommon', function() {
   return gulp.src('app/js/*.js')
-    .pipe(concat('common.min.js'))
     .pipe(uglify(''))
+    .pipe(concat('common.min.js'))
     .pipe(gulp.dest('dist/js'));
 });
 
@@ -85,12 +85,6 @@ gulp.task('fontsdist', function() {
     .pipe(gulp.dest('dist/fonts'));
 });
 
-// gulp.task('watch', function () {
-// 	gulp.watch('app/sass/*.sass', ['styles']).on('change', browserSync.reload);
-// 	gulp.watch('app/libs/**/*.js', ['scripts']);
-// 	gulp.watch('app/js/*.js',['scriptsCommon']).on("change", browserSync.reload);	
-// 	gulp.watch('app/**/*.jade', ['templates']).on('change', browserSync.reload);
-// });
 gulp.task('watch', function () {
 	gulp.watch('app/sass/*.sass', ['styles']);
 	gulp.watch('app/libs/**/*.js', ['scripts']);
