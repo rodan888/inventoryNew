@@ -2,22 +2,22 @@ doctype html
 html.no-js(lang="ru")
 	include templates/structure/head
 	body
-		include templates/structure/header
 		main
 			div.container
 				div.row
 					div.col-md-12
 						section.tabs
 							ul 
-								each val,ind in ['form','image','slider','popup','over']
+								each val,ind in ['nav','form','image','slider','popup','over']
 									if(ind== 0)
 										li.tab-link.active(data-show=val)=val
 									else
 										li.tab-link(data-show=val)=val
 							div.tabs-wrap
+								include templates/navigation
 								div#form.tab
 									div.tab-content
-										h1.title.center.mt4 Forms example								
+										h1.title.center.mt4 Forms example
 										form(action="#")
 											div.container-fluid
 												div.row

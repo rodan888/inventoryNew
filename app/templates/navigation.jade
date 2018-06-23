@@ -1,0 +1,16 @@
+div#nav
+	//- First variant-----------------------------
+	div.container
+		div.row
+			div.col-sm-2
+				a(href="/")
+					img(src="../img/logo.png", alt="siteName")
+			div.col-sm-10
+				nav
+					ul.nav
+						each val, index in {1:'Home',2:'About',3:'News',4:'Contacts'}
+							li
+								a(href=index + val)= val
+	
+	//- Second variant----------------------------
+	//- Third variant-----------------------------

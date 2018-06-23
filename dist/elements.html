@@ -12,38 +12,40 @@
     <link rel="stylesheet" href="css/main.min.css">
   </head>
   <body>
-    <header>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <nav>
-              <ul class="nav">
-                <li><a href="1Home">Home</a></li>
-                <li><a href="2About">About</a></li>
-                <li><a href="3News">News</a></li>
-                <li><a href="4Contacts">Contacts</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
     <main>
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <section class="tabs">
               <ul> 
-                <li data-show="form" class="tab-link active">form</li>
+                <li data-show="nav" class="tab-link active">nav</li>
+                <li data-show="form" class="tab-link">form</li>
                 <li data-show="image" class="tab-link">image</li>
                 <li data-show="slider" class="tab-link">slider</li>
                 <li data-show="popup" class="tab-link">popup</li>
                 <li data-show="over" class="tab-link">over</li>
               </ul>
               <div class="tabs-wrap">
+                <div id="nav">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-2"><a href="/"><img src="../img/logo.png" alt="siteName"></a></div>
+                      <div class="col-sm-10">
+                        <nav>
+                          <ul class="nav">
+                            <li><a href="1Home">Home</a></li>
+                            <li><a href="2About">About</a></li>
+                            <li><a href="3News">News</a></li>
+                            <li><a href="4Contacts">Contacts</a></li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div id="form" class="tab">
                   <div class="tab-content">
-                    <h1 class="title center mt4">Forms example								</h1>
+                    <h1 class="title center mt4">Forms example</h1>
                     <form action="#">
                       <div class="container-fluid">
                         <div class="row">
