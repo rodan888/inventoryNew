@@ -3,10 +3,11 @@ html.no-js(lang="ru")
 	include templates/structure/head
 	body
 		main
-			div.content-block.center
-				h1.title Write code here
-				p.subtitle or click button and select some dom element
-				a(href="elements.html").btn.fool my simple framework
-
-		include templates/structure/footer			
+			div.cont-wrap.center
+				img(src="img/tui-logo.png", alt="%%main-title" style="max-width:120px")
+				h1.title.roboto-light.black %%main-title
+				p.subtitle.text.mb1 %%main-subtitle
+				a(href="elements.html").btn.fool.m5 %%btn-started
+				a(href="https://github.com/rodan888/StartGulp" target="_blank").btn.fool.m5 %%btn-started
+				p.label.text.mt1 %%version
 		include templates/structure/scripts

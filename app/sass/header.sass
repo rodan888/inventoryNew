@@ -1,10 +1,7 @@
 @import "bourbon"
 @import "_vars.sass"
 @import "_mixins.sass"
-
-+font-face("RobotoRegular", "../fonts/RobotoRegular/RobotoRegular", $file-formats: eot woff ttf)
-+font-face("RobotoRegular", "../fonts/RobotoLight/RobotoLight", $file-formats: eot woff ttf)
-+font-face("OpenSansBold", "../fonts/OpenSansBold/OpenSansBold", $file-formats: eot woff ttf)
+@import "_fonts.sass"
 
 body
 	font-size: 16px
@@ -17,10 +14,18 @@ body
 
 .hidden
 	display: none
-.clrp
-	padding: 0
 .dib
 	display: inline-block
+	
+//margin-------
+.clrm
+	margin: 0!important
+.m5
+	margin: 5px
+.m10
+	margin: 10px
+.m15
+	margin: 15px
 .mt0
 	margin-top: 0!important
 .mb0
@@ -49,12 +54,113 @@ body
 	margin-top: 60px
 .mb6
 	margin-bottom: 60px
+//margin-------
+
+//padding------
+.clrp
+	padding: 0
+.p5
+	padding: 5px
+.p10
+	padding: 10px
+.p20
+	padding: 20px
+.p30
+	padding: 30px
+//padding------
+
+//font-size----
+.fz10
+	font-size: 10px
+	line-height: 12px
+.fz15
+	font-size: 15px
+	line-height: 17px
+.fz20
+	font-size: 20px
+	line-height: 22px
+.fz25
+	font-size: 25px
+	line-height: 27px
+.fz30
+	font-size: 30px
+	line-height: 32px
+.fz40
+	font-size: 40px
+	line-height: 42px
+.fz50
+	font-size: 50px
+	line-height: 52px
+//font-size----
+
+//Font-family--
+.roboto-bold
+	font-family: 'RobotoBold'
+	font-weight: 900
+.roboto-regular
+	font-family: 'RobotoRegular'
+	font-weight: 400
+.roboto-light
+	font-family: 'RobotoLight'
+	font-weight: 100
+
+.sans-bold
+	font-family: 'OpenSansBold'
+	font-weight: 900
+.sans-regular
+	font-family: 'OpenSansRegular'
+	font-weight: 400
+.sans-light
+	font-family: 'OpenSansLight'
+	font-weight: 100
+.sans-italic
+	font-family: 'OpenSansItalic'
+	font-weight: 100
+
+.proxima-black
+	font-family: "ProximaNovaBlack"
+	font-weight: 900
+.proxima-bold
+	font-family: "ProximaNovaBold"
+	font-weight: 900
+.proxima-regular
+	font-family: "ProximaNovaRegular"
+	font-weight: 400
+//Font-family--
+
+//Shadow-------
+.shadow-easee
+	box-shadow: 0px 0px 3px $gray
+.shadow-medium
+	box-shadow: 3px 3px 9px $blackMedium
+.shadow-hard
+	box-shadow: 5px 5px 15px $blackHard
+//Shadow-------
+
+//Radius-------
+.bdr3
+	border-radius: 3px
+.bdr5
+	border-radius: 5px
+.bdr10
+	border-radius: 10px
+.bdr50
+	border-radius: 50%
+	overflow: hidden
+//Radius-------
+
+//Text align---
 .right
 	text-align: right
 .left
 	text-align: left
 .center
 	text-align: center
+//Text align---
+
+
+.ttu
+	text-transform: uppercase
 a
 	&:hover
 		text-decoration: none
@@ -72,50 +178,120 @@ input,textarea,button
 	outline: none
 	border: none
 
+hr
+	margin-top: 5px
+	margin-bottom: 5px
+	border-top: 1px solid $grayLight
+
 .title	
 	text-transform: uppercase
-	margin-bottom: 10px
 	letter-spacing: 1px
 	color: $main
-	font-size: 22px
+	&.black
+		color: $black
+	&.white
+		color: $white
 
 .subtitle
 	font-size: 18px
 	line-height: 24px
 	color: $textColor
-	margin-bottom: 25px
+	font-family: 'RobotoLight'
+	font-weight: 100
+
+.label
+	color: $blackLight
+	font-size: 12px
+	font-family: 'RobotoLight'
+
+.text
+	font-size: 14px
+	color: $textColor
 	
 //Navigation start--------------------
-header
+.navigation
+	.logo
+		line-height: 55px
+		display: block
+		img
+			max-height: 50px
 	nav
+		line-height: 60px
 		ul
 			li
 				display: inline-block
 				vertical-align: top
+				font-size: 0
+				width: 10%
+				min-width: 80px
 				a
-					color: $black
+					position: relative
 					display: block
-					padding: 5px 10px
+					padding: 0px 10px
+					font-size: 12px
+					text-align: center
+					color: $black
+					&:before
+						background-color: $main
+						transition: all 0.3s						
+	&.base
+		nav >ul li
+			a			
+				&:hover,
+				&.active
+					&:before
+						width: 100%
+						left: 0
+				&:before
+					@include getBefore(100%, 50%, 0%, 1px)
+	&.big
+		nav >ul li
+			a
+				&:hover,
+				&.active
+					color: $white
+					&:before
+						height: 100%
+				&:before
+					z-index: -1
+					opacity: 0.7
+					@include getBefore(0%, 0%, 100%, 0px)
+	&.dot
+		nav >ul li
+			&:last-child a:before
+				display: none
+			a
+				&:before
+					border-radius: 50%
+					transform: translateY(-50%)
+					@include getBefore(50%, 99%, 6px, 6px)
 //Navigation end-----------------------
 
 // Button start------------------------
 .btn
-	border: 2px solid $main
-	color: $main
-	text-transform: uppercase	
-	height: 40px
-	line-height: 35px
-	display: inline-block
-	background-color: transparent	
+	height: 30px
 	min-width: 170px
+	display: inline-block
+	border: 1px solid $main
+	color: $white
 	text-align: center
 	font-size: 12px
+	line-height: 28px
+	text-transform: uppercase	
+	background-color: $main	
 	@include border-radius(3px)
 	@include transition(all 0.3s)
 	&:hover
-		background-color: $red
-		border-color: $red
-		color: $white
+		background-color: transparent
+		color: $main
+	&.material
+		width: 30px
+		height: 30px
+		min-width: 30px
+		line-height: 25px
+		border-radius: 50%
+
+
 	&.full
 		display: block
 		background-color: $main
@@ -168,6 +344,26 @@ header
 				right: -15px
 // Button end--------------------------------
 
+//User card start----------------------------
+.user-card
+	padding-left: 10px
+	position: relative
+	&:before
+		background-color: $main
+		@include getBefore(10%, 0%, 1px, 80%)
+	.img
+		width: 50px
+		height: 50px
+		vertical-align: middle
+		img
+			width: 100%
+			vertical-align: top
+	.info-wrap
+		margin: 0 5px
+		vertical-align: middle
+	.user-options
+		margin-left: 5px
+//User card end------------------------------
 
 // Image card scale start--------------------
 .img-wrap
@@ -205,7 +401,6 @@ header
 			height: 80px
 			bottom: -80px			
 			z-index: 1
-			@include background-image(linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 40%,rgba(255,255,255,1) 100%))	
 		&:hover
 			box-shadow: 0 0px 8px $textColor
 			&:before
@@ -319,17 +514,3 @@ header
 					border: 1px solid $main
 					color: $main
 // Pagination end------------------------------
-
-
-.block
-	min-height: 300px
-	position: relative
-.content-block
-	position: absolute
-	max-width: 600px	
-	position: absolute
-	top: 50%
-	left: 50%
-	@include transform(translateX(-50%) translateY(-50%))
-
-

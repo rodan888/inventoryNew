@@ -8,17 +8,18 @@ html.no-js(lang="ru")
 					div.col-md-12
 						section.tabs
 							ul 
-								each val,ind in ['nav','form','image','slider','popup','over']
+								each val,ind in ['nav','form','text','image','slider','popup','over']
 									if(ind== 0)
 										li.tab-link.active(data-show=val)=val
 									else
 										li.tab-link(data-show=val)=val
 							div.tabs-wrap
 								include templates/navigation
+								include templates/tipografic
 								div#form.tab
 									div.tab-content
 										h1.title.center.mt4 Forms example
-										form(action="#")
+										form(action="#" class="style")
 											div.container-fluid
 												div.row
 													div.col-md-6.clrp
@@ -122,14 +123,7 @@ html.no-js(lang="ru")
 															h3 card hover||img-wrap small #{+n+i}
 															p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi atque tempore illo necessitatibus reprehenderit, soluta quasi quos!
 															a(href="#", class="btn grey") Reed
-								div#slider.tab
-									div.tab-content
-										h1.title.center.mt4 Slider example
-										section.slider
-											- var n = 0
-											while n < 3
-												div.item
-													img(src="img/slider"+ n++ +".jpg" alt="foto")
+								include templates/sliders
 								div#popup.tab
 									div.tab-content.center
 										h1.title.center.mt4 Popup example
@@ -199,5 +193,5 @@ html.no-js(lang="ru")
 														li.control
 															a(href="#")
 																i.fa.fa-angle-right
-		include templates/structure/footer			
+		include templates/structure/footer		
 		include templates/structure/scripts

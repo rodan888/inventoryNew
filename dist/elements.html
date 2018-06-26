@@ -2,13 +2,14 @@
 <html lang="ru" class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>Start gulp template</title>
+    <title>TUI framework</title>
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/vendor.min.css">
     <link rel="stylesheet" href="css/header.min.css">
+    <link rel="stylesheet" href="css/mainColorSchema.min.css">
     <link rel="stylesheet" href="css/main.min.css">
   </head>
   <body>
@@ -20,33 +21,158 @@
               <ul> 
                 <li data-show="nav" class="tab-link active">nav</li>
                 <li data-show="form" class="tab-link">form</li>
+                <li data-show="text" class="tab-link">text</li>
                 <li data-show="image" class="tab-link">image</li>
                 <li data-show="slider" class="tab-link">slider</li>
                 <li data-show="popup" class="tab-link">popup</li>
                 <li data-show="over" class="tab-link">over</li>
               </ul>
               <div class="tabs-wrap">
-                <div id="nav">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-sm-2"><a href="/"><img src="../img/logo.png" alt="siteName"></a></div>
-                      <div class="col-sm-10">
-                        <nav>
-                          <ul class="nav">
-                            <li><a href="1Home">Home</a></li>
-                            <li><a href="2About">About</a></li>
-                            <li><a href="3News">News</a></li>
-                            <li><a href="4Contacts">Contacts</a></li>
-                          </ul>
-                        </nav>
+                <div id="nav" class="tab">
+                  <div class="navigation base mt1 shadow-easee">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-sm-2"><a href="/" class="logo"><img src="../img/logo-company.png" alt="TUI framework"></a></div>
+                        <div class="col-sm-10">
+                          <nav class="right">
+                            <ul class="nav dib">
+                              <li><a href="home.html" class="active roboto-light">Home</a></li>
+                              <li><a href="portfolio.html" class="roboto-light">Portfolio</a></li>
+                              <li><a href="shop.html" class="roboto-light">Shop</a></li>
+                              <li><a href="blog.html" class="roboto-light">Blog</a></li>
+                              <li><a href="about.html" class="roboto-light">About</a></li>
+                              <li><a href="contacts.html" class="roboto-light">Contacts</a></li>
+                            </ul>
+                            <div class="user-card dib">
+                              <div class="user-info dib">
+                                <div class="img bdr50 dib"><img src="../img/seampl10.jpg" alt="user"></div>
+                                <div class="info-wrap dib">
+                                  <p class="roboto-light fz15">Smith john</p>
+                                  <p class="label fz10">Administrator</p>
+                                </div>
+                              </div>
+                              <div class="user-options dib">
+                                <button tupe="button" class="btn material"><i class="fas fa-cogs"></i></button>
+                                <button tupe="button" class="btn material"><i class="fas fa-sign-out-alt"></i></button>
+                              </div>
+                            </div>
+                          </nav>
+                        </div>
                       </div>
                     </div>
+                  </div>
+                  <div class="navigation big mt1 shadow-easee">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-sm-2"><a href="/" class="logo"><img src="../img/logo-company.png" alt="TUI framework"></a></div>
+                        <div class="col-sm-10">
+                          <nav class="right">
+                            <ul class="nav dib">
+                              <li><a href="home.html" class="active roboto-light">Home</a></li>
+                              <li><a href="portfolio.html" class="roboto-light">Portfolio</a></li>
+                              <li><a href="shop.html" class="roboto-light">Shop</a></li>
+                              <li><a href="blog.html" class="roboto-light">Blog</a></li>
+                              <li><a href="about.html" class="roboto-light">About</a></li>
+                              <li><a href="contacts.html" class="roboto-light">Contacts</a></li>
+                            </ul>
+                            <form action="" class="search dib">
+                              <input type="text" placeholder="Search">
+                              <button tupe="button" class="dib search"><i class="fas fa-search">							</i></button>
+                            </form>
+                          </nav>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="navigation dot mt1 shadow-easee">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-sm-2"><a href="/" class="logo"><img src="../img/logo-company.png" alt="TUI framework"></a></div>
+                        <div class="col-sm-10">
+                          <nav class="right">
+                            <ul class="nav dib">
+                              <li><a href="home.html" class="active roboto-light">Home</a></li>
+                              <li><a href="portfolio.html" class="roboto-light">Portfolio</a></li>
+                              <li><a href="shop.html" class="roboto-light">Shop</a></li>
+                              <li><a href="blog.html" class="roboto-light">Blog</a></li>
+                              <li><a href="about.html" class="roboto-light">About</a></li>
+                              <li><a href="contacts.html" class="roboto-light">Contacts</a></li>
+                            </ul>
+                            <form action="" class="login dib">
+                              <button tupe="button" class="btn">Login</button><span class="roboto-regular fz15"> -					</span>
+                              <button tupe="button" class="btn">Sign up</button>
+                            </form>
+                          </nav>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div id="text" class="tab">
+                  <div class="tab-content">
+                    <section>
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <div class="shadow-easee p10 mt1">
+                              <p class="sans-bold fz30">Aa Bb Cc Dd</p><span class="label">OpenSansBold font-size 30px</span>
+                              <hr>
+                              <p class="sans-regular fz25">Aa Bb Cc Dd</p><span class="label">OpenSansRegular font-size 25px</span>
+                              <hr>
+                              <p class="sans-light fz20">Aa Bb Cc Dd</p><span class="label">OpenSansLight font-size 20px</span>
+                              <hr>
+                              <p class="sans-italic fz15">Aa Bb Cc Dd</p><span class="label">OpenSansItalic font-size 15px</span>
+                            </div>
+                            <div class="shadow-easee p10 mt1">
+                              <p class="roboto-bold fz30">Aa Bb Cc Dd</p><span class="label">RobotoBold font-size 30px</span>
+                              <hr>
+                              <p class="roboto-regular fz25">Aa Bb Cc Dd</p><span class="label">RobotoRegular font-size 30px</span>
+                              <hr>
+                              <p class="roboto-light fz20">Aa Bb Cc Dd</p><span class="label">RobotoLight font-size 20px</span>
+                            </div>
+                            <div class="shadow-easee p10 mt1">
+                              <p class="proxima-black fz30">Aa Bb Cc Dd</p><span class="label">ProximaNovaBlack font-size 30px</span>
+                              <hr>
+                              <p class="proxima-bold fz25">Aa Bb Cc Dd</p><span class="label">ProximaNovaBold font-size 25px</span>
+                              <hr>
+                              <p class="proxima-regular fz20">Aa Bb Cc Dd</p><span class="label">ProximaNovaRegular font-size 20px</span>
+                            </div>
+                          </div>
+                          <div class="col-sm-7">
+                            <div class="shadow-easee p10 mt1">
+                              <p class="sans-bold fz30">Paragraph. Lorem ipsum dolor (bold)</p><span class="label">OpenSansBold font-size 30px</span>
+                              <hr>
+                              <p class="sans-regular fz25">Paragraph. Lorem ipsum dolor (regular)</p><span class="label">OpenSansRegular font-size 25px</span>
+                              <hr>
+                              <p class="sans-light fz20">Paragraph. Lorem ipsum dolor (light)</p><span class="label">OpenSansLight font-size 20px</span>
+                              <hr>
+                              <p class="sans-italic fz15 text">Paragraph. Lorem ipsum dolor (italic)</p><span class="label">OpenSansItalic font-size 15px</span>
+                            </div>
+                            <div class="shadow-easee p10 mt1">
+                              <p class="roboto-bold fz30">Paragraph. Lorem ipsum dolor (bold)</p><span class="label">RobotoBold font-size 30px</span>
+                              <hr>
+                              <p class="roboto-regular fz25">Paragraph. Lorem ipsum dolor (regular)</p><span class="label">RobotoRegular font-size 30px</span>
+                              <hr>
+                              <p class="roboto-light fz20">Paragraph. Lorem ipsum dolor (light)</p><span class="label">RobotoLight font-size 20px</span>
+                            </div>
+                            <div class="shadow-easee p10 mt1">
+                              <p class="proxima-black fz30">Paragraph. Lorem ipsum dolor (black)</p><span class="label">ProximaNovaBlack font-size 30px</span>
+                              <hr>
+                              <p class="proxima-bold fz25">Paragraph. Lorem ipsum dolor (bold)</p><span class="label">ProximaNovaBold font-size 25px</span>
+                              <hr>
+                              <p class="proxima-regular fz20">Paragraph. Lorem ipsum dolor (regular)</p><span class="label">ProximaNovaRegular font-size 20px</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
                   </div>
                 </div>
                 <div id="form" class="tab">
                   <div class="tab-content">
                     <h1 class="title center mt4">Forms example</h1>
-                    <form action="#">
+                    <form action="#" class="style">
                       <div class="container-fluid">
                         <div class="row">
                           <div class="col-md-6 clrp">
@@ -202,11 +328,87 @@
                 </div>
                 <div id="slider" class="tab">
                   <div class="tab-content">
-                    <h1 class="title center mt4">Slider example</h1>
-                    <section class="slider">
-                      <div class="item"><img src="img/slider0.jpg" alt="foto"></div>
-                      <div class="item"><img src="img/slider1.jpg" alt="foto"></div>
-                      <div class="item"><img src="img/slider2.jpg" alt="foto"></div>
+                    <section class="slider-single owl-carousel mt2 shadow-easee">
+                      <div class="item">
+                        <div class="container clrp">
+                          <div class="row">
+                            <div class="col-sm-2">
+                              <div class="gradient-bg fz40"><i class="fab fa-angular"></i></div>
+                            </div>
+                            <div class="col-sm-10">
+                              <div class="cont-wrap">
+                                <h2 class="title black">Icon from font-awesome</h2><span class="label">fab fa-angular</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="container clrp">
+                          <div class="row">
+                            <div class="col-sm-2">
+                              <div class="gradient-bg fz40"><i class="fab fa-js"></i></div>
+                            </div>
+                            <div class="col-sm-10">
+                              <div class="cont-wrap">
+                                <h2 class="title black">Icon from font-awesome</h2><span class="label">fab fa-js</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="container clrp">
+                          <div class="row">
+                            <div class="col-sm-2">
+                              <div class="gradient-bg fz40"><i class="fab fa-node-js"></i></div>
+                            </div>
+                            <div class="col-sm-10">
+                              <div class="cont-wrap">
+                                <h2 class="title black">Icon from font-awesome</h2><span class="label">fab fa-node-js</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="slider-multiple owl-carousel mt2 shadow-hard">
+                      <div class="item">
+                        <div class="cont-wrap p1">
+                          <h4 class="title">Ease</h4>
+                          <p class="text">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, eius!"</p>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="cont-wrap p1">
+                          <h4 class="title">Medium</h4>
+                          <p class="text">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, eius!"</p>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="cont-wrap p1">
+                          <h4 class="title">Hard</h4>
+                          <p class="text">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, eius!"</p>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="cont-wrap p1">
+                          <h4 class="title">Gold</h4>
+                          <p class="text">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, eius!"</p>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="cont-wrap p1">
+                          <h4 class="title">Silver</h4>
+                          <p class="text">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, eius!"</p>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="cont-wrap p1">
+                          <h4 class="title">Steel</h4>
+                          <p class="text">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, eius!"</p>
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </div>
@@ -297,9 +499,9 @@
       <div class="copy">
         <div class="container">
           <div class="row">
-            <div class="col-md-4">© <a href="http://tsumbaluk.in.ua">tsumbaluk.in.ua</a></div>
-            <div class="col-md-4 center"><a href="sitemap.xml"><i class="fa fa-sitemap">Sitemap</i></a></div>
-            <div class="col-md-4">
+            <div class="col-sm-4">© <a href="http://tsumbaluk.in.ua">tsumbaluk.in.ua</a></div>
+            <div class="col-sm-4 center"><a href="sitemap.xml"><i class="fa fa-sitemap">Sitemap</i></a></div>
+            <div class="col-sm-4">
               <div class="dev"><a href="http://tsumbaluk.in.ua/" target="_blank" rel="nofollow">Developed by<span>Alexander Tsymbalyuk</span></a></div>
             </div>
           </div>
@@ -313,7 +515,7 @@
     <script src="libs/respond/respond.min.js"></script>
     -->
     <!--![endif]-->
-    <script src="js/jquery-2.2.0.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/plagin.min.js"></script>
     <script src="js/common.min.js"></script>
   </body>

@@ -33,3 +33,22 @@
 	-o-transition-delay:      $delay
 	-webkit-transition-delay: $delay
 	transition-delay:         $delay
+
+@mixin getBefore ($top, $left, $width, $height)
+	position: absolute
+	content: ''
+	top: $top
+	left: $left
+	width: $width
+	height: $height
+
+@mixin colorSchema ($base, $second, $third)
+	%gradient
+		background: $base
+		background: -moz-linear-gradient(left, $base 0%, $second 100%)
+		background: -webkit-linear-gradient(left, $base 0%, $second 100%)
+		background: linear-gradient(to right, $base 0%, $second 100%)
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$base, endColorstr=$second,GradientType=1 )
+
+	.gradient-bg
+		@extend %gradient

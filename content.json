@@ -1,0 +1,29 @@
+{
+	"index.html": {
+		"title": "TUI Framework",
+		"main-title": "TUI Framework",
+		"main-subtitle": "Minimal CSS framework for flat and clean designs",
+		"btn-started": "Getting started",
+		"btn-github": "View on GitHub",
+		"version": "Latest version 1.0.2"
+	},
+	"elements.html": {
+		"title": "TUI framework",
+		"home": "Home",
+		"portfolio": "Portfolio",
+		"shop": "Shop",
+		"blog": "Blog",
+		"about": "About",
+		"contacts": "Contacts"
+	},
+	"signin/signin.html": {
+		"title": "Sign In",
+		"description": "description for the page sign in",
+		"keywords": "keywords for the page sign in"
+	},
+	"signup/signup.html": {
+		"title": "Sign Up",
+		"description": "description for the page sign up",
+		"keywords": "keywords for the page sign up"
+	}
+}

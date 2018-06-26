@@ -1,4 +1,4 @@
-var     gulp         = require('gulp'),
+var gulp         = require('gulp'),
 		sass         = require('gulp-sass'),
 		autoprefixer = require('gulp-autoprefixer'),
 		minifycss    = require('gulp-minify-css'),
@@ -8,15 +8,20 @@ var     gulp         = require('gulp'),
 		concatCss    = require('gulp-concat-css'),
 		uglify       = require('gulp-uglifyjs'),
 		jade         = require('gulp-jade'),
-		imagemin     = require('gulp-imagemin');
+		imagemin     = require('gulp-imagemin'),
+		jr 					 = require('gulp-json-replace'),
+		imageminMozjpeg = require('imagemin-mozjpeg');
 
 gulp.task('browser-sync', [
 							'styles',							
-							'compress',
 							'scriptsConcat',
 							'scriptsCommon',
+							'copyJquery',
+							'copyfontAwesome',
+							'copyfonts',
 							'vendorCss',							
 							'templates',
+							'compress',
 							'fontsdist',
 							], function() {
 		browserSync.init({
@@ -42,10 +47,27 @@ gulp.task('styles', function () {
 	.pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('compress', function() {
-  return gulp.src('app/img/*')
-  .pipe(imagemin(''))
-  .pipe(gulp.dest('dist/img/'));
+gulp.task('compress', () =>
+  gulp.src('app/img/*')
+  .pipe(imagemin([imageminMozjpeg({
+      quality: 85
+  })]))
+  .pipe(gulp.dest('dist/img/'))
+);
+
+gulp.task('copyJquery', function () {
+  return gulp.src('./node_modules/jquery/dist/jquery.min.js')
+  	.pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('copyfontAwesome', function() {
+  gulp.src('app/libs/font-awesome/webfonts/*.{ttf,woff,woff2,eof,svg}')
+  	.pipe(gulp.dest('dist/css/font-awesome/webfonts/'));
+});
+
+gulp.task('copyfonts', function() {
+  gulp.src('app/fonts/**/*.{ttf,woff,woff2,eof,svg}')
+  	.pipe(gulp.dest('dist/fonts/'));
 });
 
 gulp.task('scriptsConcat', function() {
@@ -77,7 +99,11 @@ gulp.task('templates', function() {
       locals: YOUR_LOCALS,
       pretty: true
     }))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(jr({
+      src: './content.json',
+      identify: '%%'
+ 		}))
+ 	 .pipe(gulp.dest('./dist/'))
 });
 
 gulp.task('fontsdist', function() {

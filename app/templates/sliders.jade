@@ -1,0 +1,21 @@
+div#slider.tab
+	div.tab-content
+		section.slider-single.owl-carousel.mt2.shadow-easee
+			each val,ind in ['fab fa-angular','fab fa-js','fab fa-node-js']
+				div.item
+					div.container.clrp
+						div.row
+							div.col-sm-2
+								div.gradient-bg.fz40
+									i(class=val)
+							div.col-sm-10
+								div.cont-wrap
+									h2.title.black Icon from font-awesome
+									span.label=val
+
+		section.slider-multiple.owl-carousel.mt2.shadow-hard
+			each val,ind in ['Ease','Medium','Hard','Gold','Silver','Steel']
+				div.item
+					div.cont-wrap.p1
+						h4.title=val
+						p.text "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, eius!"

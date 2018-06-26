@@ -13,8 +13,36 @@
 *:-ms-input-placeholder
 	color: #666
 	opacity: 1
-	
-form 
+
+button
+	background-color: transparent
+	font-family: "RobotoLight"
+	font-size: 14px
+
+form.search
+	position: relative
+	input[type="text"]
+		border: 1px solid $grayLight
+		text-indent: 5px
+		font-size: 14px
+		min-width: 180px
+		height: 30px
+	.search
+		position: absolute
+		top: 50%
+		right: 0px
+		height: 30px
+		width: 30px
+		transform: translateY(-50%)
+		line-height: 30px
+		color: $blackLight
+
+form.login
+	padding-left: 10px
+	button
+		min-width: 70px
+
+form.style
 	padding: 20px
 	margin: 0 auto
 	max-width: 600px 	

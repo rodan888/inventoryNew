@@ -8,15 +8,17 @@ $(function() {
 			body: $('body'),
 			wind: $(window),
 			mobButton: $('.mob-button'),
-			slider: $('.slider'),
-			owlOptions: {
-				autoPlay: 3000,
-				navigation: true,
-				singleItem: true,
-				autoPlay: false,	
-				pagination: true,
-				scrollPerPage: true,
-				navigationText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>']								
+		},
+		sliders: {
+			single: $('.slider-single'),
+			multiple: $('.slider-multiple'),
+			Options: function(items,autoplay,dots){
+				this.items = items;
+				this.nav = true;
+				this.dots = dots;
+				this.stagePadding = 0;
+				this.smartSpeed = 450;
+				this.autoplay = autoplay;
 			}
 		},
 		tabs: function(el){
@@ -83,7 +85,8 @@ $(function() {
 			// Add el window height
 			this.fullHeight(this.opt.body);
 			//owl slider init
-			this.opt.slider.owlCarousel(this.opt.owlOptions);
+			this.sliders.single.owlCarousel(new this.sliders.Options(1,true,false));
+			this.sliders.multiple.owlCarousel(new this.sliders.Options(3,false,false));
 			//mob button toggle
 			this.toggleC(this.opt.mobButton);
 		}
@@ -107,7 +110,6 @@ $(function() {
 
 
 	$(document).ready(function(){
-
 		main.init();
 
 		//Chrome Smooth Scroll
