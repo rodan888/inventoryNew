@@ -1,9 +1,9 @@
-{
-  "name": "TUI framework",
-  "version": "3.0.0",
-  "author": "tsumbaluk888@gmail.com",
-  "webpage": "tsumbaluk.in.ua",
+{ "name": "tui-framework",
   "description": "Start gulp build. Easy and fast dev",
+  "author": "tsumbaluk888@gmail.com",
+  "homepage": "tsumbaluk.in.ua",
+  "version": "3.0.0",
+  "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.11.0",
     "gulp": "^3.9.1",
