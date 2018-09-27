@@ -61,12 +61,12 @@ gulp.task('copyJquery', function () {
 });
 
 gulp.task('copyfontAwesome', function() {
-  gulp.src('app/libs/font-awesome/webfonts/*.{ttf,woff,woff2,eof,svg}')
+  gulp.src('app/libs/font-awesome/webfonts/*.{ttf,woff,woff2,eot,svg}')
   	.pipe(gulp.dest('dist/css/font-awesome/webfonts/'));
 });
 
 gulp.task('copyfonts', function() {
-  gulp.src('app/fonts/**/*.{ttf,woff,woff2,eof,svg}')
+  gulp.src('app/fonts/**/*.{ttf,woff,woff2,eot,svg}')
   	.pipe(gulp.dest('dist/fonts/'));
 });
 
