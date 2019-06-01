@@ -116,6 +116,64 @@ footer
 				display: block
 
 
+.title-line
+	margin: 0 auto
+	padding-left: 30px
+	max-width: 465px
+	border-left: 1px solid $blue
+	h3
+		color: $blue
+		font-weight: 200
+	p
+		color: $darkBlue
+		margin-top: 20px
+
+
+//Custom styles---------
+.main-promo
+	background-color: $white
+	overflow: hidden
+	.promo-comtent,
+	.get-more-wrap
+		position: relative
+		height: 100vh
+	.promo-comtent:before
+		position: absolute
+		content: ''
+		width: 100%
+		height: 100%
+		background-color: rgba(0,0,0, 0.5)
+	.descr-block
+		position: absolute
+		top: 50%
+		left: 10%
+		max-width: 465px
+		color: $white
+		h1
+			font-family: 'SourceSansProBlack'
+			font-size: 58px
+		h2
+			font-weight: 100
+	img
+		width: auto
+		max-width: 100%
+		min-height: 100vh
+	.get-more
+		position: absolute
+		bottom: 10%
+		left: 25%
+		color: $main
+		text-transform: uppercase
+		transform: rotate(-90deg)
+		border-bottom: 2px solid $main
+		padding: 0
+		text-indent: -5px
+		&:hover
+			i
+				transform: translate(-12px,12px)
+		i
+			transform: translate(-6px,12px)
+			transition: transform 0.3s
 //ALWAYS END
 @import "_preloader.sass"
 @import "media"

@@ -1,70 +1,21 @@
-div#nav.tab
-	//- Navigation base start--------------------------
-	.navigation.base.mt1.shadow-easee
-		div.container-fluid
-			div.row
-				div.col-sm-2
-					a(href="/" class="logo")
-						img(src="../img/logo-company.png", alt="%%title")
-				div.col-sm-10
-					nav.right
-						ul.nav.dib
-							each val, index in {1:'home',2:'portfolio',3:'shop',4:'blog',5:'about',6:'contacts'}
-								li
-									a(href=val+'.html' class=index==1?'active roboto-light':'roboto-light')='%%'+val
-						div.user-card.dib
-							div.user-info.dib
-								div.img.bdr50.dib
-									img(src="../img/seampl10.jpg", alt="user")
-								div.info-wrap.dib
-									p.roboto-light.fz15 Smith john
-									p.label.fz10 Administrator
-							div.user-options.dib
-								button(tupe="button" class="btn material")
-									i.fas.fa-cogs
-								button(tupe="button" class="btn material")
-									i.fas.fa-sign-out-alt
-								
-	//- Navigation base end-----------------------------
-	
-	//- Navigation big start ---------------------------
-	.navigation.big.mt1.shadow-easee
-		div.container-fluid
-			div.row
-				div.col-sm-2
-					a(href="/" class="logo")
-						img(src="../img/logo-company.png", alt="%%title")
-				div.col-sm-10
-					nav.right
-						ul.nav.dib
-							each val, index in {1:'home',2:'portfolio',3:'shop',4:'blog',5:'about',6:'contacts'}
-								li
-									a(href=val+'.html' class=index==1?'active roboto-light':'roboto-light')='%%'+val
-						form(action="" class="search dib")
-							input(type="text" placeholder="Search")
-							button(tupe="button" class="dib search")
-								i.fas.fa-search							
-	//- Navigation big end -----------------------------
-
-	//- Navigation dot start ---------------------------
-	.navigation.dot.mt1.shadow-easee
-		div.container-fluid
-			div.row
-				div.col-sm-2
-					a(href="/" class="logo")
-						img(src="../img/logo-company.png", alt="%%title")
-				div.col-sm-10
-					nav.right
-						ul.nav.dib
-							each val, index in {1:'home',2:'portfolio',3:'shop',4:'blog',5:'about',6:'contacts'}
-								li
-									a(href=val+'.html' class=index==1?'active roboto-light':'roboto-light')='%%'+val
-						form(action="" class="login dib")
-							button(tupe="button" class="btn") Login
-							span.roboto-regular.fz15  -					
-							button(tupe="button" class="btn") Sign up
-	//- Navigation dot end -----------------------------
-
-
-	//- Second variant----------------------------
-	//- Third variant-----------------------------
+.navigation.big
+	div.container-fluid
+		div.row
+			div.col-sm-2.clrp
+				a(href="/" class="logo center")
+					img(src="../img/logo-company.png", alt="%%title")
+			div.col-sm-10.clrp
+				div.container-fluid
+					div.row
+						div.col-sm-11.clrp
+							nav.right
+								ul.nav.dib
+									each val, index in {1:'home',2:'portfolio',3:'shop',4:'blog',5:'about',6:'contacts'}
+										li
+											a(href=val+'.html' class=index==1?'active roboto-light':'roboto-light')= val
+						div.col-sm-1.clrp
+							div.lang-switcher.center
+								span.active en
+								ul
+									li en
+									li ru

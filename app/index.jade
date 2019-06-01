@@ -2,12 +2,17 @@ doctype html
 html.no-js(lang="ru")
 	include templates/structure/head
 	body
+		header
+			include templates/navigation
 		main
-			div.cont-wrap.center
-				img(src="img/tui-logo.png", alt="%%main-title" style="max-width:120px")
-				h1.title.roboto-light.black %%main-title
-				p.subtitle.text.mb1 %%main-subtitle
-				a(href="elements.html").btn.fool.m5 %%btn-started
-				a(href="https://github.com/rodan888/StartGulp" target="_blank").btn.fool.m5 %%btn-started
-				p.label.text.mt1 %%version
+			include templates/main-promo
+			include templates/about
+			include templates/cases
+
+
+
+
+
+
+
 		include templates/structure/scripts

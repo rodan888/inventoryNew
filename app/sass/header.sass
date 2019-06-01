@@ -9,7 +9,7 @@ body
 	position: relative
 	padding-bottom: 100px
 	line-height: 1.6
-	font-family: "RobotoRegular", sans-serif
+	font-family: "SourceSansProRegular", sans-serif
 	overflow-x: hidden
 
 .hidden
@@ -166,9 +166,6 @@ a
 		text-decoration: none
 		color: $black
 
-h1,h2,h3,h4,h5,h6
-	font-family: "OpenSansBold",sans-serif
-
 h1,h2,h3,h4,h5,h6,ul,p
 	margin: 0
 	padding: 0
@@ -210,6 +207,11 @@ hr
 	
 //Navigation start--------------------
 .navigation
+	position: fixed
+	top: 0
+	right: 0
+	width: 100%
+	z-index: 10000
 	.logo
 		line-height: 55px
 		display: block
@@ -230,59 +232,35 @@ hr
 					padding: 0px 10px
 					font-size: 12px
 					text-align: center
-					color: $black
-					&:before
-						background-color: $main
-						transition: all 0.3s						
-	&.base
-		nav >ul li
-			a			
-				&:hover,
-				&.active
-					&:before
-						width: 100%
-						left: 0
-				&:before
-					@include getBefore(100%, 50%, 0%, 1px)
+					color: $white
 	&.big
 		nav >ul li
 			a
-				&:hover,
 				&.active
 					color: $white
-					&:before
-						height: 100%
-				&:before
-					z-index: -1
-					opacity: 0.7
-					@include getBefore(0%, 0%, 100%, 0px)
-	&.dot
-		nav >ul li
-			&:last-child a:before
-				display: none
-			a
-				&:before
-					border-radius: 50%
-					transform: translateY(-50%)
-					@include getBefore(50%, 99%, 6px, 6px)
+	.lang-switcher
+		color: $white
+		text-transform: uppercase
 //Navigation end-----------------------
 
 // Button start------------------------
 .btn
-	height: 30px
 	min-width: 170px
 	display: inline-block
 	border: 1px solid $main
+	padding: 0 10px
 	color: $white
 	text-align: center
-	font-size: 12px
-	line-height: 28px
-	text-transform: uppercase	
-	background-color: $main	
+	font-size: 14px
+	line-height: 40px
+	letter-spacing: 1px
+	text-transform: uppercase
+	cursor: pointer
+	background-color: $main
 	@include border-radius(3px)
 	@include transition(all 0.3s)
 	&:hover
-		background-color: transparent
+		background-color: $white
 		color: $main
 	&.material
 		width: 30px
