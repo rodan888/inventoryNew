@@ -12,11 +12,13 @@ $(function() {
 		sliders: {
 			single: $('.slider-single'),
 			multiple: $('.slider-multiple'),
-			Options: function(items,autoplay,dots){
+			Options: function(items,autoplay,dots,nav){
 				this.items = items;
-				this.nav = true;
-				this.dots = dots;
+				this.nav = nav;
+				// this.dots = dots;
 				this.stagePadding = 0;
+				this.pagination = true;
+				this.pagination = true;
 				this.smartSpeed = 450;
 				this.autoplay = autoplay;
 			}
@@ -85,8 +87,8 @@ $(function() {
 			// Add el window height
 			this.fullHeight(this.opt.body);
 			//owl slider init
-			this.sliders.single.owlCarousel(new this.sliders.Options(1,true,false));
-			this.sliders.multiple.owlCarousel(new this.sliders.Options(3,false,false));
+			this.sliders.single.owlCarousel(new this.sliders.Options(1,true,false,true));
+			this.sliders.multiple.owlCarousel(new this.sliders.Options(4,false,true,false));
 			//mob button toggle
 			this.toggleC(this.opt.mobButton);
 		}

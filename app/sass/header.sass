@@ -3,6 +3,7 @@
 @import "_mixins.sass"
 @import "_fonts.sass"
 
+
 body
 	font-size: 16px
 	min-width: 320px
@@ -67,6 +68,23 @@ body
 	padding: 20px
 .p30
 	padding: 30px
+
+.pl1
+	padding-left: 10px
+.pr1
+	padding-right: 10px
+.pl2
+	padding-left: 20px
+.pr2
+	padding-right: 20px
+.pl3
+	padding-left: 30px
+.pr3
+	padding-right: 30px
+.pl4
+	padding-left: 40px
+.pr4
+	padding-right: 40px
 //padding------
 
 //font-size----
@@ -161,10 +179,6 @@ body
 
 .ttu
 	text-transform: uppercase
-a
-	&:hover
-		text-decoration: none
-		color: $black
 
 h1,h2,h3,h4,h5,h6,ul,p
 	margin: 0
@@ -179,6 +193,61 @@ hr
 	margin-top: 5px
 	margin-bottom: 5px
 	border-top: 1px solid $grayLight
+
+.base-title
+	color: $mediumBlue
+	font-family: SourceSansProBlack
+	font-size: 45px
+	line-height: 50px
+	&.white
+		color: $blueLight
+	&.line
+		position: relative
+		z-index: 10
+		&:before
+			position: absolute
+			content: ''
+			width: 240px
+			height: 240px
+			left: -50%
+			top: 55px
+			z-index: -1
+			background: repeating-linear-gradient(-45deg, #8FCBE3, #8FCBE3 2px, transparent 1px, transparent 15px)
+
+
+.title-arrow
+	position: relative
+	max-width: 500px
+	margin: 0 auto
+	font-family: SourceSansProBlack
+	color: $mediumBlue
+	font-size: 36px
+	line-height: 50px
+	text-align: center
+	span
+		position: absolute
+		top: 14px
+		width: 80px
+		height: 80px
+		z-index: -1
+		background: repeating-linear-gradient(-45deg, #8FCBE3, #8FCBE3 2px, transparent 1px, transparent 15px)
+		&:before
+			position: absolute
+			content: ''
+			width: 120px
+			height: 100px
+			background-color: $white
+			transform: rotate(45deg)
+		&:nth-child(1)
+			left: -60px
+			&:before
+				top: -45px
+				left: 15px
+		&:nth-child(2)
+			right: -60px
+			&:before
+				top: 25px
+				left: -55px
 
 .title	
 	text-transform: uppercase
@@ -202,12 +271,77 @@ hr
 	font-family: 'RobotoLight'
 
 .text
-	font-size: 14px
-	color: $textColor
-	
+	font-size: 20px
+	line-height: 36px
+	letter-spacing: 0.02em
+	font-family: 'RobotoLight'
+	font-weight: 100
+	&.white p
+		color: $blueLight
+	p
+		margin-bottom: 20px
+		color: $mediumBlue
+
+.vertical-btn
+	position: absolute
+	width: 90px
+	height: 350px
+	bottom: 0
+	left: 0
+	background-color: $mediumBlue
+	color: $blueLight
+	&:hover
+		i
+			left: 58%	
+			&:after
+				width: 18px
+				left: -19px
+	span
+		display: block
+		transform: rotate(90deg)
+		text-align: right
+		margin-top: 40px
+		text-transform: uppercase
+	i
+		position: absolute
+		bottom: 10px
+		left: 50%
+		transition: left 0.3s
+		&:after
+			position: absolute
+			content: ''
+			top: 50%
+			left: -12px
+			width: 12px
+			height: 3px
+			margin-top: -2px
+			border-radius: 2px
+			background-color: $blueLight
+			transition: all 0.3s
+
+.arrow-btn
+	position: relative
+	display: inline-block
+	color: $blue
+	text-transform: uppercase
+	&:hover
+		&:before
+			width: 25px
+			right: -30px	
+	&:before
+		position: absolute
+		content: ''
+		width: 15px
+		height: 2px
+		top: 50%
+		right: -20px
+		margin-top: -2px
+		background-color: $blue
+		transition: all 0.3s
+
 //Navigation start--------------------
 .navigation
-	position: fixed
+	position: absolute
 	top: 0
 	right: 0
 	width: 100%
@@ -268,8 +402,6 @@ hr
 		min-width: 30px
 		line-height: 25px
 		border-radius: 50%
-
-
 	&.full
 		display: block
 		background-color: $main
@@ -320,6 +452,12 @@ hr
 				width: 100%
 			&:before
 				right: -15px
+	&.gradient
+		border: none
+		padding: 0 25px
+		@include background-image(linear-gradient(left,  #0195ff 0%,#7db9e8 100%))
+
+
 // Button end--------------------------------
 
 //User card start----------------------------
@@ -346,20 +484,18 @@ hr
 // Image card scale start--------------------
 .img-wrap
 	position: relative
-	height: 230px
-	overflow: hidden	
-	&.small
-		img
-			width: 100%
+	height: 100%
+	min-height: 150px
+	overflow: hidden
 	img
 		position: absolute
 		top: 50%
 		left: 50%
 		min-height: 100%
+		min-width: 100%
+		max-height: 110%
 		@include transform(translate(-50%,-50%))
 		@include transition(transform 0.8s)
-		&:hover
-			@include transform(translate(-50%,-50%) scale(1.2))
 // Image card scale утв-----------------------
 
 
