@@ -114,7 +114,46 @@ $(function() {
 	$(document).ready(function(){
 		main.init();
 
-		//Chrome Smooth Scroll
+		var scrlTo = function(elm,id){
+			elm.click(function(event){
+				if(window.location.pathname === '/' && !$(this).attr('data-redirect')){
+					event.preventDefault();
+					$([document.documentElement, document.body]).animate({
+	      		scrollTop: id ? $(id).offset().top : $($(this).attr("href")).offset().top
+	  			}, 800);
+				};
+			});
+		};
+		scrlTo($("nav a"));
+		scrlTo($('#scrlToAbout'),'#About');
+		scrlTo($('#scrlToMain'),'#Main-promo');
+		
+
+		var nav = $('.fixed-nav nav');
+		var setActiveLink = function(e){
+			var curSection = e.attr('id') !== undefined ? nav.find('a[href="#'+e.attr('id')+'"]') : false;
+			if(curSection && curSection.length > 0){
+				nav.find('a').removeClass('active');
+				curSection.addClass('active');
+			};
+		};
+
+		$('section').waypoint({
+			handler: function(event, direction){
+				if(direction === "down") {
+					e = $(event.target);
+					e.addClass('active');
+					setActiveLink(e);
+				}else if(direction === "up"){
+					e = $(event.target);
+					e.removeClass('active');
+					setActiveLink(e);
+				};
+			},
+			offset: '35%'
+		});
+
+
 		try {
 			$.browserSelector();
 			if($("html").hasClass("chrome")) {

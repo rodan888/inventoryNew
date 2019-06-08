@@ -7,15 +7,27 @@
 			div.col-sm-10.clrp
 				div.container-fluid
 					div.row
-						div.col-sm-11.clrp
+						div.col-sm-12.clrp
 							nav.right
 								ul.nav.dib
-									each val, index in {1:'home',2:'portfolio',3:'shop',4:'blog',5:'about',6:'contacts'}
+									each val, index in {1:'About',2:'System',3:'Clients',4:'Team'}
 										li
-											a(href=val+'.html' class=index==1?'active roboto-light':'roboto-light')= val
-						div.col-sm-1.clrp
-							div.lang-switcher.center
-								span.active en
-								ul
-									li en
-									li ru
+											a(href='#'+val class=index==1?'active ':'')= val
+									li.lang-switcher.center
+										span.active-lang en
+										ul
+											li 
+												a(href="en" class="en") en
+											li
+												a(href="ru" class="ru") ru
+	div.fixed-nav
+		a(href="/" class="logo center mt2")
+			img(src="../img/logo-company.png", alt="%%title")
+		nav
+			ul.nav
+				each val, index in {1:'About',2:'System',3:'Clients',4:'Team'}
+					li
+						a(href="#"+val)= val
+		button(type="button" class="get-more" id="scrlToMain")
+			i.fa.fa-chevron-right
+			| Вверх

@@ -21,39 +21,46 @@
             <div class="col-sm-10 clrp">
               <div class="container-fluid">
                 <div class="row">
-                  <div class="col-sm-11 clrp">
+                  <div class="col-sm-12 clrp">
                     <nav class="right">
                       <ul class="nav dib">
-                        <li><a href="home.html" class="active roboto-light">home</a></li>
-                        <li><a href="portfolio.html" class="roboto-light">portfolio</a></li>
-                        <li><a href="shop.html" class="roboto-light">shop</a></li>
-                        <li><a href="blog.html" class="roboto-light">blog</a></li>
-                        <li><a href="about.html" class="roboto-light">about</a></li>
-                        <li><a href="contacts.html" class="roboto-light">contacts</a></li>
+                        <li><a href="#About" class="active ">About</a></li>
+                        <li><a href="#System">System</a></li>
+                        <li><a href="#Clients">Clients</a></li>
+                        <li><a href="#Team">Team</a></li>
+                        <li class="lang-switcher center"><span class="active-lang">en</span>
+                          <ul>
+                            <li> <a href="en" class="en">en</a></li>
+                            <li><a href="ru" class="ru">ru</a></li>
+                          </ul>
+                        </li>
                       </ul>
                     </nav>
-                  </div>
-                  <div class="col-sm-1 clrp">
-                    <div class="lang-switcher center"><span class="active">en</span>
-                      <ul>
-                        <li>en</li>
-                        <li>ru</li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="fixed-nav"><a href="/" class="logo center mt2"><img src="../img/logo-company.png" alt="TUI Framework"></a>
+          <nav>
+            <ul class="nav">
+              <li><a href="#About">About</a></li>
+              <li><a href="#System">System</a></li>
+              <li><a href="#Clients">Clients</a></li>
+              <li><a href="#Team">Team</a></li>
+            </ul>
+          </nav>
+          <button type="button" id="scrlToMain" class="get-more"><i class="fa fa-chevron-right"></i>Вверх</button>
+        </div>
       </div>
     </header>
     <main>
-      <section class="main-promo">
+      <section id="Main-promo" class="main-promo">
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-2 get-more-wrap clrp">
-              <button type="button" class="get-more"><i class="fa fa-chevron-left"></i>Узнать больше</button>
+              <button type="button" id="scrlToAbout" class="get-more"><i class="fa fa-chevron-left"></i>Узнать больше</button>
             </div>
             <div class="col-md-10 clrp">
               <div class="promo-comtent"><img src="../img/Image hero-min.png" alt="main-image">
@@ -66,7 +73,7 @@
           </div>
         </div>
       </section>
-      <section class="about">
+      <section id="About" class="about">
         <div class="title-line">
           <h3 class="base-title">Какой продукт мы продаем?</h3>
           <div class="text">
@@ -210,7 +217,7 @@
           </div>
         </div>
       </section>
-      <section class="analytics">
+      <section id="System" class="analytics">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
@@ -301,7 +308,7 @@
           </div>
         </div>
       </section>
-      <section class="clients mt4 mb4">
+      <section id="Clients" class="clients mt4 mb4">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
@@ -316,7 +323,7 @@
           </div>
         </div>
       </section>
-      <section class="team">
+      <section id="Team" class="team">
         <div class="container">
           <div class="row">
             <div class="col-md-6">
@@ -340,6 +347,19 @@
         </div>
       </section>
     </main>
+    <footer>
+      <div class="copy">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">© <a href="https://abminventory.com">abminventory.com</a></div>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+              <div class="dev"><a href="http://tsumbaluk.in.ua/" target="_blank" rel="nofollow">Developed by<span>Alexander Tsymbalyuk</span></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <!--[if lt IE 9]
     <script src="libs/html5shiv/es5-shim.min.js"></script>
     <script src="libs/html5shiv/html5shiv.min.js"></script>
