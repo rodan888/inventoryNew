@@ -1,0 +1,87 @@
+section#News-list.news-list.mb6
+	div.container.mt8
+		div.row
+			div.col-sm-9
+				div.slider-single.owl-carousel.mt4
+					- var j = 0
+					while j < 3
+						div.item
+							div.image
+								img(src="../img/cases1-min.jpg", alt="foto")
+							div.content-wrap
+								div.tag 
+									span Исскуственный интеллект
+								h4.small-title как 5G позволит ИИ влиять на демографию и климат
+								p.descr Розничная и мелкооптовая продажа автозапчастей и расходных материалов для коммерческих и легковых авто.
+								div.user
+									div.author-photo
+										img(src="../img/seampl"+ j++ +".jpg", alt="photo")
+									div.icon-list 
+										span.author Author
+										h5 Ольга соломон
+					
+
+			div.col-sm-3
+				div.theme-list-card.num.mt3.mb3
+					h4.small-title.mt3.pl3 Главные новости
+					ul
+						- var t = 0
+						while t < 5
+							li(class="pl3")
+								span #{t++}
+								a(href="/") Compare Prices: Find The Best Computer Accessory
+	
+	div.container.mt6.mb6
+		div.row
+			- var s = 0
+			while s < 4
+				div.col-sm-3.clrp
+					div(class="blog-card small mt3 mb3")
+						.content-wrap
+							div.icon-list 
+								span.name finance
+							h3 
+								a(href="/") Las Vegas: How To Have Non-Gambling Related Fun-#{s++}
+								div.icon-list 
+									span.time May 15, 2019
+							div.user
+								div.author-photo
+									img(src="../img/seampl11.jpg", alt="photo")
+								div.icon-list 
+									span.author Author
+									h5 Ольга соломон
+	div.container
+		div.row
+			div.col-sm-3
+				div.theme-list-card.mt3.mb3
+					h4.small-title.mt3.pl3 Темы:
+					ul
+						- var p = 0
+						while p < 5
+							li(class="pl3")
+								a(href="/") Исскуственный интеллект-#{p++}
+			- var n = 0
+			while n < 7
+				div.col-sm-3
+					if n === 5
+						div(class="blog-card custom mt3 mb3")
+							.content-wrap
+								div.icon-list 
+									span.name finance
+								div.icon
+									i(class="fa fa-bar-chart")
+								h3 
+									a(href="/") Las Vegas: How To Have Non-Gambling Related Fun-#{n++}
+								p.mt1 There is a lot of exciting stuff going on in the stars above us that make astronomy so much fun.
+					else
+						div(class="blog-card mt3 mb3")
+							.img-wrap
+								img(src="img/seampl"+ n++ +".jpg" alt="foto")
+							.content-wrap
+								div.icon-list
+									div.play
+										i(class="fa fa-play")
+										span.name video
+								h3 
+									a(href="/") Unmatched Toner Cartridge Quality: 20% Less Than OEM Price
+								p.mt1 There is a lot of exciting stuff going on in the stars above us that make astronomy so much fun.

@@ -14,11 +14,6 @@
 	color: #666
 	opacity: 1
 
-button
-	background-color: transparent
-	font-family: "SourceSansProRegular"
-	font-size: 14px
-
 form.search
 	position: relative
 	input[type="text"]
@@ -53,16 +48,14 @@ form.style
 	input[type="text"], input[type="password"], textarea 
 		width: 100%
 		height: 40px
-		padding: 10px 10px 10px 90px
 		box-sizing: border-box
-		border: 1px solid $gray
-		color: $textColor		
-		@include border-radius(3px)
+		color: $textColor
+		padding: 0
 		@include transition(all 0.3s)
 	textarea 
+		padding: 0
 		height: auto
 		min-height: 200px
-		padding: 50px 10px 10px 10px	
 	input[type="text"] + label, 
 	input[type="password"] + label, 
 	textarea + label
@@ -97,12 +90,6 @@ form.style
 		width: 32px
 		text-align: center
 		@include transition(transform 0.3s)	
-	
-	input[type="text"]:focus, input[type="password"]:focus 
-		padding-left: 10px 	
-	
-	textarea:focus 
-		padding-top: 10px	
 	
 	input[type="text"]:focus + label, input[type="password"]:focus + label 		
 		@include transform(translateZ(0) translateX(-100%))

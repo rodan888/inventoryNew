@@ -12,6 +12,11 @@ body
 	font-family: "SourceSansProRegular", sans-serif
 	overflow-x: hidden
 
+button
+	background-color: transparent
+	font-family: "SourceSansProRegular"
+	font-size: 14px
+
 .hidden
 	display: none
 .dib
@@ -54,6 +59,14 @@ body
 	margin-top: 60px
 .mb6
 	margin-bottom: 60px
+.mt7
+	margin-top: 70px
+.mb7
+	margin-bottom: 70px
+.mt8
+	margin-top: 80px
+.mb8
+	margin-bottom: 80px
 //margin-------
 
 //padding------
@@ -193,6 +206,12 @@ hr
 	margin-bottom: 5px
 	border-top: 1px solid $grayLight
 
+.small-title
+	color: $blue
+	font-family: 'SourceSerifProLight'
+	font-size: 22px
+	font-weight: 100
+
 .base-title
 	color: $mediumBlue
 	font-family: "SourceSansProBlack"
@@ -218,7 +237,7 @@ hr
 	position: relative
 	max-width: 500px
 	margin: 0 auto
-	font-family: SourceSansProBlack
+	font-family: 'SourceSansProBlack'
 	color: $mediumBlue
 	font-size: 36px
 	line-height: 50px
@@ -365,6 +384,7 @@ hr
 	right: 0
 	width: 100%
 	z-index: 10000
+	height: 60px
 	.logo
 		line-height: 55px
 		display: block
@@ -392,9 +412,9 @@ hr
 			.active-lang
 				color: $blueLight
 			&:hover ul
-				margin-top: 0
-				opacity: 1
-				font-size: 12px
+					margin-top: 0
+					opacity: 1
+					font-size: 12px
 			ul 
 				line-height: 25px
 				opacity: 0
@@ -402,6 +422,13 @@ hr
 				transition: all 0.3s
 				li a
 					color: $blueLight
+	&.inner
+		background-color: $white
+		nav >ul li
+			&.lang-switcher .active-lang,
+			a
+				color: $darkBlue
+
 	&.big
 		nav >ul li
 			a
@@ -597,8 +624,8 @@ hr
 		top: 50%
 		left: 50%
 		min-height: 100%
-		min-width: 100%
-		max-height: 110%
+		width: 100%
+		max-height: -webkit-fill-available
 		@include transform(translate(-50%,-50%))
 		@include transition(transform 0.8s)
 // Image card scale утв-----------------------
