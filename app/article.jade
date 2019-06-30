@@ -1,0 +1,76 @@
+doctype html
+html.no-js(lang="ru")
+	include templates/structure/head
+	body
+		header
+			include templates/navigation-inner
+		main
+			include templates/article-promo
+			section.article-content.mt2
+				div.container
+					div.row
+						div.col-md-8
+							div.article-content-wrap
+								p.title-small.mb4 By James Cooper and Stanly Brown
+								p.text-article There is a lot of exciting stuff going on in the 
+									| stars above us that makes astronomy so much fun. 
+									| The universe is constantly changing, moving. 
+									| Some would say it’s a “living” thing because you never 
+									| know what you are going to see on any given night of stargazing.
+									| Of the many celestial phenomenons, there is probably none as exciting as 
+									| when you see your first asteroid on the move in the heavens. 
+									| To call asteroids the “rock stars” of astronomy is both a bad joke and an accurate 
+									| depiction of how astronomy fans view them. Unlike suns, planets, and moons, 
+									| asteroids are on the move, ever-changing, and, 
+									| if they appear in the night sky, they are exciting and dynamic.
+						div.col-md-4
+							div.theme-list-card.num.mt3.mb3
+								ul
+									- var t = 0
+									while t < 3
+										li(class="pl3")
+											span #{t++}
+											a(href="/") Find The Best Computer Accessory
+				div.container
+					div.row
+						div.col-md-12
+							div.media.mt3.mb3
+								img(src="img/service_1.jpg", alt="foto")
+								span.content-descr There is a lot of exciting stuff going on in the stars
+				div.container.mb5
+					div.row
+						div.col-md-8
+							div.article-content-wrap
+								hr
+								p.title-small.mb2.mt2 To call asteroids the “rock stars” of astronomy is both a bad joke and an accurate depiction of how astronomy fans view them.
+								hr
+								div.text-article There is a lot of exciting stuff going on in the 
+									| stars above us that makes astronomy so much fun. 
+									| The universe is constantly changing, moving.
+									h4 Unmatched Toner Cartridge Quality
+									| Some would say it’s a “living” thing because you never 
+									| know what you are going to see on any given night of stargazing.
+									| Of the many celestial phenomenons, there is probably none as exciting as 
+									| when you see your first asteroid on the move in the heavens. 
+									| To call asteroids the “rock stars” of astronomy is both a bad joke and an accurate 
+									| depiction of how astronomy fans view them. Unlike suns, planets, and moons, 
+									| asteroids are on the move, ever-changing, and, 
+									| if they appear in the night
+									h4 Unmatched Toner Cartridge Quality
+									| Of the many celestial phenomenons, there is probably 
+									| none as exciting as when you see your first asteroid on the 
+									| move in the heavens. To call asteroids the “rock stars” of 
+									| astronomy is both a bad joke and an accurate depiction of how 
+									| astronomy fans view them. Unlike suns, planets, and moons, 
+									| asteroids are on the move, ever-changing, and, if they appear 
+									| in the night sky, they are exciting and dynamic.
+						div.col-md-4
+							div.media.mb3
+								div.videoWrapper.js-videoWrapper
+									iframe(class="videoIframe js-videoIframe" src="" frameborder="0" allowTransparency="true" allowfullscreen data-src="https://www.youtube.com/embed/HHxd_na03vY?autoplay=1& modestbranding=1&rel=0&hl=sv")
+									button.videoPoster.js-videoPoster(style="background-image:url(img/text-block-min.jpg);")
+										i.fa.fa-play
+								span.content-descr But of the many celestial phenomenons, there is probably none as exciting as that time you see your first asteroid on the move in the heavens. To call asteroids the “rock stars” of astronomy is both a bad joke but an accurate depiction of how astronomers view them.
+			include templates/last-news
+		include templates/structure/footer
+		include templates/structure/scripts
