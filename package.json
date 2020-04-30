@@ -21,7 +21,7 @@
     "imagemin-mozjpeg": "^7.0.0",
     "node-sass": "^3.4.2",
     "node-bourbon": "^4.2.8",
-    "jquery": "^2.1.1",
+    "jquery": "^3.5.0",
     "gulp-json-replace": "^1.0.9",
     "vinyl-ftp": "^0.6.0"
   }
